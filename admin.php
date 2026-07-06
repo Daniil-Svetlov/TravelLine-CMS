@@ -6,7 +6,6 @@ if (file_exists($databaseFile)) {
     $data = json_decode(file_get_contents($databaseFile), true) ?? [];
 }
 
-// Дефолтные значения для Hero, если JSON пустой
 $heroTitle = $data['hero']['title'] ?? 'Стабильно растем';
 $heroSubtitle = $data['hero']['subtitle'] ?? 'Разрабатываем решения для бизнеса';
 ?>
