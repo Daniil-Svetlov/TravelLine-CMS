@@ -1,13 +1,12 @@
 <?php
 $databaseFile = __DIR__ . '/data.json';
 
-// Дефолтные значения
 $heroTitle = "Стабильно растем";
 $heroSubtitle = "Разрабатываем решения для бизнеса";
 $team = [];
-$advantages = []; // Новое
-$directions = []; // Новое
-$vacancies = [];  // Новое
+$advantages = []; 
+$directions = []; 
+$vacancies = [];  
 
 if (file_exists($databaseFile)) {
     $jsonContent = file_get_contents($databaseFile);
@@ -22,7 +21,6 @@ if (file_exists($databaseFile)) {
         $team = $data['team'];
     }
 
-    // Читаем новые блоки из JSON
     if (isset($data['advantages'])) {
         $advantages = $data['advantages'];
     }
@@ -35,7 +33,6 @@ if (file_exists($databaseFile)) {
 }
 ?>
 <!DOCTYPE html>
-<!-- saved from url=(0024)https://travelline.tech/ -->
 <html lang="ru" class="lenis" style="scroll-behavior: smooth;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./assets/tag_phono.js" type="text/javascript" charset="utf-8" async=""></script>
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,12 +97,9 @@ if (file_exists($databaseFile)) {
     <link rel="preload" href="https://travelline.tech/local/templates/template1/public/assets/fonts/manrope/Manrope-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="https://travelline.tech/local/templates/template1/public/assets/fonts/manrope/Manrope-SemiBold.woff" as="font" type="font/woff" crossorigin="anonymous">
 
-    <!-- Vendors -->
     <link rel="stylesheet" href="./assets/lenis.css">
     <link rel="stylesheet" href="./assets/swiper-bundle.min.css">
-            <!-- Подключение скрипта кук -->
     
-    <!-- Build -->
         <link rel="stylesheet" href="./assets/style.min.css">
 </head>
 <body class="page" style="">
@@ -323,21 +317,16 @@ if (file_exists($databaseFile)) {
         <div class="team__slider swiper swiper-initialized swiper-horizontal">
             <div class="team__list swiper-wrapper" id="swiper-wrapper-359d2a80e3d457d1" aria-live="off" style="transition-duration: 6000ms; transform: translate3d(-2492px, 0px, 0px);">
     
-    <!-- Запускаем цикл PHP. Он пройдётся по массиву из data.json и выведет столько карточек, сколько там записано -->
     <?php foreach ($team as $employee): ?>
         <article class="swiper-slide team__item" role="group" style="margin-right: 20px;">
             <div class="team__item-card card card--rounded">
                 <picture>
-                    <!-- Выводим динамическую ссылку на фото из JSON -->
                     <img src="<?php echo htmlspecialchars($employee['photo']); ?>" class="team__item-image card__image" alt="<?php echo htmlspecialchars($employee['name']); ?>" width="336" height="477" decoding="async" loading="lazy">
                 </picture>
                 <div class="card__description">
-                    <!-- Выводим динамическое имя -->
                     <h3 class="team__item-title">
                         <?php echo htmlspecialchars($employee['name']); ?>
                     </h3>
-
-                    <!-- Выводим динамическую должность -->
                     <p class="team__item-description">
                         <?php echo htmlspecialchars($employee['position']); ?>
                     </p>
@@ -1394,14 +1383,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const item = this.closest('.directions__item');
             const content = item.querySelector('.accordion__content');
             const arrow = this.querySelector('.accordion__arrow');
-            
-            // Если этот элемент уже открыт — закрываем его
             if (item.classList.contains('is-active')) {
                 item.classList.remove('is-active');
                 content.style.display = 'none';
                 arrow.textContent = '▼';
             } else {
-                // Открываем текущий элемент
                 item.classList.add('is-active');
                 content.style.display = 'block';
                 arrow.textContent = '▲';
@@ -1894,7 +1880,6 @@ if (file_exists($databaseFile)) {
             $bonuses = $data['bonuses'] ?? [];
             if (!empty($bonuses)): 
                 foreach ($bonuses as $index => $b): 
-                    // Исправлено: ($index % 8) + 1 гарантирует правильные классы от 1 до 8
                     $itemNumber = ($index % 8) + 1; 
             ?>
                     <article class="bonus__item bonus__item--<?= $itemNumber ?> card card--half-rounded card--default" style="opacity: 0; visibility: hidden;">
