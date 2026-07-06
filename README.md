@@ -19,16 +19,11 @@
 ### Панель администратора (`admin.php`)
 здесь ты можешь добавлять, редактировать и удалять элементы блоков (например, бенефиты, технологии и вакансии).
 
-<p align="center">
-  <img src="path_to_image" alt="Панель администратора" width="850">
-</p>
+
 <img width="1688" height="976" alt="image" src="https://github.com/user-attachments/assets/890f7fbf-7e34-46c3-b56c-f487b7123ff5" />
 ### Клиентская часть (`index.php`)
 Динамический вывод блоков на основе данных из JSON. На скриншоте ниже представлен блок «Плюшки и все такое» с автоматическим циклическим распределением CSS-стилей анимации.
 
-<p align="center">
-  <img src="path_to_image" alt="Главная страница портала" width="850">
-</p>
 <img width="1710" height="963" alt="image" src="https://github.com/user-attachments/assets/63f8d984-6a79-4a6e-85a2-6106097457f7" />
 
 ---
